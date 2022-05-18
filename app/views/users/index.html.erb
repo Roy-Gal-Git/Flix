@@ -1,0 +1,13 @@
+<h1><%= pluralize(@users.size, "user") %></h1>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <section>
+        <%= profile_image(user, 35) %>
+        <%= link_to user.name, user %>
+        was created
+        <%= time_ago_in_words(user.created_at) %> ago
+      </section>
+    </li>
+  <% end %>
+</ul>
